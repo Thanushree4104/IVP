@@ -17,12 +17,14 @@ def embed_watermark(image, watermark_text):
 
             block = image[i:i+BLOCK_SIZE, j:j+BLOCK_SIZE]
             dct_block = cv2.dct(block)
-
+            c1 = dct_block[4][4]
+            c2 = dct_block[3][3]
             if bits[bit_index] == '1':
-                dct_block[4][4] += STRENGTH
+                if c1 <= c2:
+                    dct_block[4][4] = c2 + STRENGTH
             else:
-                dct_block[4][4] -= STRENGTH
-
+                if c1 >= c2:
+                    dct_block[4][4] = c2 - STRENGTH
             image[i:i+BLOCK_SIZE, j:j+BLOCK_SIZE] = cv2.idct(dct_block)
             bit_index += 1
 

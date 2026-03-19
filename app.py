@@ -26,9 +26,8 @@ def embed():
 
     file.save(input_path)
 
-    process_embedding(input_path, output_path, watermark)
-
-    return send_file(output_path, as_attachment=True)
+    output_file = process_embedding(input_path, output_path, watermark)
+    return send_file(output_file, as_attachment=True)
 
 
 @app.route('/extract', methods=['POST'])

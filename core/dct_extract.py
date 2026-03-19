@@ -1,5 +1,6 @@
 import cv2
-from config import BLOCK_SIZE
+from config import BLOCK_SIZE,STRENGTH
+
 
 def extract_watermark(image, length):
     h, w = image.shape
@@ -10,9 +11,10 @@ def extract_watermark(image, length):
 
             block = image[i:i+BLOCK_SIZE, j:j+BLOCK_SIZE]
             dct_block = cv2.dct(block)
-
-            if dct_block[4][4] > 0:
-                bits += '1'
+            c1 = dct_block[4][4]
+            c2 = dct_block[3][3]
+            if c1 > c2:
+                 bits += '1'
             else:
                 bits += '0'
 
