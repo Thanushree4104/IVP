@@ -40,7 +40,7 @@ def extract():
 
     watermark = process_extraction(input_path, length)
 
-    return f"Extracted Watermark: {watermark}"
+    return render_template('index.html', extracted_text=watermark)
 
 
 if __name__ == '__main__':
