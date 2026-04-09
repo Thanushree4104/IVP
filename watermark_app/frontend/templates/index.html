@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WatermarkShield — Digital Image Watermarking</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <a href="/" class="nav-brand">
+    <div class="brand-icon">🛡️</div>
+    Watermark<span>Shield</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/" class="active">🏠 Home</a></li>
+    <li><a href="/embed">🔏 Embed <span class="nav-badge">NEW</span></a></li>
+    <li><a href="/verify">🔍 Verify</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-badge">
+    🔐 AES-256 + Reed-Solomon Protected
+  </div>
+  <h1>Invisible. Unbreakable.<br/>Digital Watermarking.</h1>
+  <p>
+    Embed cryptographically secure, frequency-domain watermarks into images
+    using DCT, DWT, or Hybrid methods. Verify ownership in seconds.
+  </p>
+  <div class="hero-cta">
+    <a href="/embed" class="btn btn-primary btn-lg">🔏 Start Embedding</a>
+    <a href="/verify" class="btn btn-outline btn-lg">🔍 Verify Image</a>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-value">AES-256</div>
+    <div class="stat-label">Encryption Standard</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">3</div>
+    <div class="stat-label">Embedding Methods</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">RS-ECC</div>
+    <div class="stat-label">Error Correction</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">&gt;30dB</div>
+    <div class="stat-label">Typical PSNR</div>
+  </div>
+</div>
+
+<!-- ── FEATURES ── -->
+<div class="features" style="margin-top:3rem;">
+  <div class="feature-card">
+    <div class="feature-icon cyan">🔒</div>
+    <h3>AES-256-CTR Encryption</h3>
+    <p>Your watermark text or logo is encrypted with AES-256 before embedding. Only the correct password can verify it.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon violet">🧩</div>
+    <h3>Reed-Solomon ECC</h3>
+    <p>Error correction codes protect watermark bits from JPEG compression, noise, and mild image manipulation.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon green">📊</div>
+    <h3>Invisible Embedding</h3>
+    <p>Spread-spectrum techniques embed watermarks in frequency domain — visually imperceptible with PSNR &gt; 40 dB.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon amber">🖼️</div>
+    <h3>Text &amp; Logo Support</h3>
+    <p>Embed copyright text, author signatures, or a binary logo image as your watermark payload.</p>
+  </div>
+</div>
+
+<!-- ── METHODS ── -->
+<section class="methods-section">
+  <h2 class="section-title">Three Embedding Methods</h2>
+  <p class="section-sub">Choose the right technique for your use case</p>
+
+  <div class="methods-grid">
+    <div class="method-card">
+      <div class="method-header">
+        <span class="method-tag">DCT</span>
+        <h3>Discrete Cosine Transform</h3>
+      </div>
+      <p>Block-DCT spread-spectrum. Splits image into 8×8 blocks and modifies mid-frequency coefficients. JPEG-resistant and fast.</p>
+      <div class="method-attrs">
+        <span class="attr-chip">JPEG resistant</span>
+        <span class="attr-chip">Block-based</span>
+        <span class="attr-chip">Fast</span>
+      </div>
+    </div>
+    <div class="method-card">
+      <div class="method-header">
+        <span class="method-tag violet">DWT</span>
+        <h3>Discrete Wavelet Transform</h3>
+      </div>
+      <p>Single-level Haar wavelet decomposition. Embeds in the LH sub-band for multi-resolution robustness across scales.</p>
+      <div class="method-attrs">
+        <span class="attr-chip">Multi-resolution</span>
+        <span class="attr-chip">Haar wavelet</span>
+        <span class="attr-chip">LH band</span>
+      </div>
+    </div>
+    <div class="method-card">
+      <div class="method-header">
+        <span class="method-tag green">HYBRID</span>
+        <h3>DWT + DCT Combined</h3>
+      </div>
+      <p>DWT decomposes the image, then DCT is applied to the LH sub-band. Strongest method combining both transforms.</p>
+      <div class="method-attrs">
+        <span class="attr-chip">Strongest</span>
+        <span class="attr-chip">Dual-domain</span>
+        <span class="attr-chip">Recommended</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <h2 class="section-title">How It Works</h2>
+  <p class="section-sub">End-to-end watermarking pipeline</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-info">
+        <h4>Set Your Password</h4>
+        <p>Enter a secret AES-256 password. This derives the encryption key via PBKDF2 — the same password is required to verify.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-info">
+        <h4>Upload Your Image</h4>
+        <p>Upload the cover image you want to protect. PNG and JPEG formats are supported.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-info">
+        <h4>Choose Watermark Type</h4>
+        <p>Enter a text watermark (copyright notice, author info) or upload a binary logo to embed as your mark.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-info">
+        <h4>Select Method &amp; Embed</h4>
+        <p>Pick DCT, DWT, or Hybrid (recommended). The watermark is AES encrypted, Reed-Solomon protected, then frequency-domain embedded.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-info">
+        <h4>Download &amp; Verify</h4>
+        <p>Download the watermarked image. Later, upload it to the Verify tab with your password to prove ownership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  WatermarkShield &mdash; DCT · DWT · Hybrid DWT+DCT &mdash; AES-256-CTR + Reed-Solomon ECC
+</footer>
+
+</body>
+</html>
